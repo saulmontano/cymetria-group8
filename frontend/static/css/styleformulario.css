@@ -1,0 +1,220 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Fallback font */
+}
+
+.contenedor-header,
+.contenedor-imagen,
+.form-container {
+  margin: 0 auto; /* Center elements horizontally */
+  padding: 10px 20px;
+}
+
+/* Header styles */
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #232f3e; /* Light gray background */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky; /* Header sticks to top on scroll (optional) */
+  top: 0;
+  z-index: 10; /* Ensure header stays on top of content */
+}
+
+.contenedor-header img {
+  width: 100px;
+  height: auto;
+}
+
+.menu-principal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-principal li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  color: white; /* Dark gray text */
+  font-weight: bold;
+}
+
+.menu-principal a:hover {
+  color: #000; /* Black on hover */
+}
+
+/* Image container styles */
+.contenedor-imagen {
+  background-color: #f5f5f5; /* Very light gray background */
+  text-align: center;
+}
+
+.contenedor-imagen img {
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+  margin: 0 auto;
+}
+
+/* Form container styles */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff; /* Ajusta el color de fondo del contenedor del formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(22, 43, 60, 0.58); /* Agrega una sombra al contenedor */
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Cambia el color del encabezado del formulario */
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: bold; 
+}
+
+.form-submit {
+    width: 100%;
+    background-color: #ffa500; /* Cambia el color de fondo del botón de envío */
+    color: #fff; /* Cambia el color del texto del botón de envío */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #ff7f00; /* Cambia el color de fondo al pasar el mouse sobre el botón de envío */
+}
+
+.form-error {
+    color: red; /* Cambia el color del texto de error */
+    font-size: 14px;
+}
+label {
+    display: block;
+    margin-bottom: 5px; /* Agrega espacio entre los labels */
+    font-weight: bold; /* Agrega negrita al texto de los labels */
+    color: #333; /* Cambia el color del texto de los labels */
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Ajusta la fuente de las opciones */
+    font-weight: bold;
+}
+
+option {
+    background-color: #fff; /* Cambia el color de fondo de las opciones */
+    color: #333; /* Cambia el color del texto de las opciones */
+}
+
+/* Estilos adicionales para el hover del select y las opciones */
+select:hover,
+option:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #232f3e; /* Color de fondo del footer */
+    color: #fff; /* Color del texto del footer */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el contenido del footer */
+.contenedor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilos para las redes sociales */
+.redes-sociales {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.redes-sociales li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.redes-sociales li:last-child {
+    margin-right: 0;
+}
+
+.redes-sociales li a {
+    color: #fff; /* Color de los íconos */
+    font-size: 20px; /* Tamaño de los íconos */
+}
+/* Estilos para el menú principal */
+.menu-principal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-principal li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-principal li:last-child {
+    margin-right: 0;
+}
+
+.menu-principal li a {
+    text-decoration: none;
+    color: white;
+    font-size: bold;
+}
+
+.menu-principal a:hover {
+  color: #000; /* Black on hover */
+}
+
+/* Estilos para el botón de menú en pantallas pequeñas */
+.menu-btn {
+    display: none; /* Ocultar el botón en pantallas grandes */
+}
+@media screen and (max-width: 600px) {
+    /* Mostrar el botón de menú en pantallas pequeñas */
+    .menu-btn {
+        display: block;
+    }
+
+    /* Ocultar el menú principal en pantallas pequeñas */
+    .menu-principal {
+        display: none;
+    }
+
+    /* Estilos para el menú desplegable en pantallas pequeñas */
+    .menu-principal.active {
+        display: block;
+    }
+}
