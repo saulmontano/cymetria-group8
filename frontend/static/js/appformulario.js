@@ -1,4 +1,6 @@
+// Función para validar y enviar el formulario
 function register_pag() {
+    // Obtener valores de los campos del formulario
     var nombre = document.getElementById("nombre").value;
     var apellido = document.getElementById("apellido").value;
     var identidad = document.getElementById("identidad").value;
@@ -7,25 +9,27 @@ function register_pag() {
     var confirmarPassword = document.getElementById("confirm-password").value;
     var genero = document.getElementById("gender").value;
     var fechaNacimiento = document.getElementById("birthdate").value;
-    var imagenPerfil = document.getElementById("profilepic").files[0];
+    var imagenPerfil = document.getElementById("profilepic").files[0];  // Archivo de imagen
     var termsChecked = document.getElementById("terms").checked;
-    
-     if (!nombre || !apellido || !identidad || !email || !password || !confirmarPassword || !genero || !fechaNacimiento || !imagenPerfil ) {
-        alert("Por favor, complete todos los campos.");
-        return; // Detener la ejecución de la función si algún campo está vacío
+
+    // Validaciones básicas para campos vacíos
+    if (!nombre || !apellido || !identidad || !email || !password || !confirmarPassword || !genero || !fechaNacimiento) {
+        alert("Por favor, complete todos los campos requeridos.");
+        return;  // Detener si algún campo está vacío
     }
 
     // Validar que las contraseñas coincidan
     if (password !== confirmarPassword) {
         alert("Las contraseñas no coinciden.");
-        return; // Detener la ejecución de la función si las contraseñas no coinciden
-    }
-     if (!termsChecked) {
-        alert("Debe aceptar los términos y condiciones.");
-        return; // Detener la ejecución de la función si el checkbox no está marcado
+        return;  // Detener si las contraseñas no coinciden
     }
 
-   // Crear datos para enviar al backend
+    if (!termsChecked) {  // Validar aceptación de términos y condiciones
+        alert("Debe aceptar los términos y condiciones.");
+        return;  // Detener si el checkbox no está marcado
+    }
+
+    // Crear un objeto para enviar al servidor
     var datosFormulario = {
         nombre: nombre,
         apellido: apellido,
@@ -34,29 +38,28 @@ function register_pag() {
         password: password,
         genero: genero,
         fechaNacimiento: fechaNacimiento,
-        imagenPerfil: imagenPerfil
-        
+        imagenPerfil: imagenPerfil  // Archivo
     };
-    
+
     // Enviar los datos usando `fetch`
     fetch('/register_user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',  // Para datos de formularios
         },
-        body: new URLSearchParams(datosFormulario),  // Convertir a parámetros URL
+        body: new URLSearchParams(datosFormulario),  // Convertir a formato adecuado para envío
     })
-   .then((response) => {
+    .then((response) => {
         if (!response.ok) {
-            throw new Error('Error al registrar usuario');
+            throw new Error('Error al registrar usuario');  // Manejo de errores de respuesta
         }
-        return response.json();
+        return response.json();  // Convertir respuesta a JSON
     })
     .then((data) => {
         alert(data.message);  // Mostrar mensaje del servidor
     })
     .catch((error) => {
-        console.error('Error:', error);
+        console.error('Error:', error);  // Manejo de errores
     });
 
      // Mostrar mensaje de éxito o realizar otras acciones necesarias
