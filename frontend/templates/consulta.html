@@ -34,7 +34,11 @@
 </div>
       <div class="contenedor-busqueda">
         <input type="text" placeholder="Ingresa el documento de identidad" required class="input-busqueda">
-        <button onclick={consult_user()} class="boton-buscar">Buscar</button>
+       <button onclick="consult_user()" class="boton-buscar">Buscar</button>  
+       <div id="mensaje-error" style="color: red; display: none;">Error al realizar la consulta.</div>
+       <div id="mensaje-exito" style="color: green; display: none;">Consulta realizada con éxito.</div>
+
+
       </div>
     </section>
     <br/>
@@ -52,17 +56,10 @@
             <th>Imagen</th>
         </tr>
     </thead>
-    <tbody id="resultados"> <!-- Datos de la tabla -->
-        <tr>
-            <td>saúl</td>
-            <td>Montaño</td>
-            <td>Masculino</td>
-            <td>26/06/1998</td>
-            <td>123456789</td>
-            <td>saul.samoz@gmail.com</td>
-            <td><center><img src="../static/images/photoSaulMontaño.jpg" alt="default" ></center></td>
-        </tr>
+    <tbody id="resultados"> 
     </tbody>
+    
+
 </table>
 
   </main>
