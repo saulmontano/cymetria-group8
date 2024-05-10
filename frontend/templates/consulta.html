@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultar</title>
+  <link rel="stylesheet" href="../static/css/styleconsulta.css">
+ 
+  <script src="https://kit.fontawesome.com/1b6dc76aca.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="contenedor-header">
+      <img src="https://www.serfadu.com/wp-content/uploads/2020/10/amazon.png" alt="Logotipo"> 
+      <nav>
+        <ul class="menu-principal">
+           <li><a href="/">Inicio</a></li>
+          <li><a href="/formulario">Formulario</a></li>
+          <li><a href="/consulta">Consulta</a></li>
+        </ul>
+        <button class="menu-btn">&#9776;</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contenedor-consulta">
+      <h1>Consultar</h1>
+      <div class="contenedor-imagen-usuario">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="80" height="80" fill="#ff9900">
+    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 
+    512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+</svg>
+</div>
+      <div class="contenedor-busqueda">
+        <input type="text" placeholder="Ingresa el documento de identidad" required class="input-busqueda">
+       <button onclick="consult_user()" class="boton-buscar">Buscar</button>  
+       <div id="mensaje-error" style="color: red; display: none;">Error al realizar la consulta.</div>
+       <div id="mensaje-exito" style="color: green; display: none;">Consulta realizada con éxito.</div>
+
+
+      </div>
+    </section>
+    <br/>
+  
+    <!-- Estructura de la tabla -->
+    <table id="tabla-resultados">
+    <thead> <!-- Encabezados de la tabla -->
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Genero</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Documento de Identidad</th>
+            <th>Correo Electrónico</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody id="resultados"> 
+    </tbody>
+    
+
+</table>
+
+  </main>
+
+  <footer>
+    <div class="contenedor-footer">
+      <p>&copy; 2024 Tu nombre o empresa</p>
+      <ul class="redes-sociales">
+        
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+   <script type="text/javascript" src="/../static/js/appconsulta.js"></script>
+  </body>
+   
+
+</html>

@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    margin: 0 auto; /* Center elements horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #232f3e; /* Cambia el color de fondo del header */
+    min-height: 60px; /* Tamaño mínimo del header */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky; /* Header sticks to top on scroll (optional) */
+  top: 0;
+  z-index: 10; /* Ensure header stays on top of content */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo-container img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-container h1 {
+    margin: 0;
+    color: #fff; /* Cambia el color de texto del título */
+    font-size: 24px; /* Tamaño de fuente para el título */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff; /* Cambia el color de texto para los enlaces del menú */
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+main {
+    padding: 20px;
+}
+
+#banner {
+    background-image: url('https://www.serfadu.com/wp-content/uploads/2020/10/amazon.png'); /* Cambia la URL de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 200px;
+    text-align: center;
+    position: relative; /* Establece la posición relativa para que los elementos absolutos se posicionen correctamente */
+    
+}
+
+#banner .card {
+    background-color: rgba(22, 43, 60, 0.83); /* Color de fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    position: absolute; /* Establece la posición absoluta */
+    left: 50%; /* Centra horizontalmente */
+    top: 50%; /* Centra verticalmente */
+    transform: translate(-50%, -50%); /* Centra exactamente */
+    max-width: 80%; /* Ancho máximo */
+}
+
+
+#banner h2,
+#banner p {
+    margin: 0;
+}
+
+#services {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los servicios se envuelvan en pantallas pequeñas */
+    justify-content: space-between; /* Distribuir los servicios horizontalmente */
+    max-width: 100%; /* Establecer un ancho máximo para el contenedor */
+}
+
+.service {
+    position: relative;
+    width: calc(50% - 10px);
+    margin-bottom: 30px;
+    padding-right: 10px;
+    height: auto;
+    overflow: hidden; /* Ocultar el contenido que desborda */
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    display: block; /* Para evitar problemas de alineación vertical */
+}
+
+.service:last-child {
+    margin-bottom: 70px; /* Ajustar el margen inferior del último servicio para dejar espacio para el footer */
+}
+
+.service h3 {
+    margin-top: 0; /* Eliminar el margen superior de los títulos */
+}
+
+.service img {
+    width: 100%; /* Ajustar el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Restaurar la altura automática */
+    margin-bottom: 10px; /* Agregar un margen inferior entre la imagen y el texto */
+}
+
+/* Estilos para el menú principal */
+.menu-principal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-principal li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-principal li:last-child {
+    margin-right: 0;
+}
+
+.menu-principal li a {
+    text-decoration: none;
+    color: white;
+    font-size: bold;
+}
+
+.menu-principal a:hover {
+  color: #000; /* Black on hover */
+}
+
+/* Estilos para el botón de menú en pantallas pequeñas */
+.menu-btn {
+    display: none; /* Ocultar el botón en pantallas grandes */
+}
+
+
+/* Estilos para el footer */
+footer {
+    background-color: #232f3e; /* Color de fondo del footer */
+    color: #fff; /* Color del texto del footer */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el contenido del footer */
+.contenedor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilos para las redes sociales */
+.redes-sociales {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.redes-sociales li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.redes-sociales li:last-child {
+    margin-right: 0;
+}
+
+.redes-sociales li a {
+    color: #fff; /* Color de los íconos */
+    font-size: 20px; /* Tamaño de los íconos */
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 10px; /* Reducir el padding en dispositivos pequeños */
+    }
+
+}
+@media screen and (max-width: 600px) {
+    /* Mostrar el botón de menú en pantallas pequeñas */
+    .menu-btn {
+        display: block;
+    }
+
+    /* Ocultar el menú principal en pantallas pequeñas */
+    .menu-principal {
+        display: none;
+    }
+
+    /* Estilos para el menú desplegable en pantallas pequeñas */
+    .menu-principal.active {
+        display: block;
+    }
+}
+@media screen and (max-width: 600px) {
+    .service {
+        width: 100%; /* Cambiar el ancho al 100% en pantallas pequeñas */
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .service {
+        width: calc(50% - 10px); /* Ajustar el ancho para dos en una fila en pantallas grandes */
+        height: 400px; /* Establecer una altura fija para los servicios en pantallas grandes */
+    }
+}

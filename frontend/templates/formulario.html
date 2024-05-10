@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">  <!-- Idioma configurado a 'es' para español -->
+<head>
+  <meta charset="UTF-8">  <!-- Codificación de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Vista responsiva -->
+  <title>Formulario de Registro</title>
+
+  <!-- Google Fonts y otros recursos -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amazon+Ember&display=swap" rel="stylesheet">
+  
+  <!-- Archivos de estilo -->
+  <link rel="stylesheet" href="../static/css/styleformulario.css">  <!-- Ruta relativa -->
+  <script src="https://kit.fontawesome.com/1b6dc76aca.js" crossorigin="anonymous"></script>  <!-- Iconos -->
+  <script src="../static/js/appformulario.js" type="text/javascript"></script>  <!-- Script del formulario -->
+</head>
+<body>
+  <header>  <!-- Encabezado con logo y navegación -->
+    <div class="contenedor-header">
+      <img src="https://www.serfadu.com/wp-content/uploads/2020/10/amazon.png" alt="Logotipo de Amazon">  <!-- Descripción accesible -->
+      <nav>
+        <ul class="menu-principal">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/formulario">Formulario</a></li>
+          <li><a href="/consulta">Consulta</a></li>
+        </ul>
+        <button class="menu-btn">&#9776;</button>  <!-- Menú hamburguesa para dispositivos móviles -->
+      </nav>
+    </div>
+  </header>
+
+  <div class="contenedor-imagen">  <!-- Imagen de encabezado -->
+    <img src="https://www.serfadu.com/wp-content/uploads/2020/10/amazon.png" alt="Imagen de encabezado">  <!-- Texto alternativo -->
+  </div>
+
+  <div class="form-container">  <!-- Contenedor del formulario -->
+    <h2 class="form-heading">Formulario de Registro</h2>  <!-- Título del formulario -->
+
+    <form id="registration-form" action="/register_user" method="POST">  <!-- Acción para el backend -->
+      <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Nombre" required>  <!-- Campo requerido -->
+      <input type="text" id="apellido" name="apellido" class="form-input" placeholder="Apellido" required>
+      <input type="number" id="identidad" name="identidad" class="form-input" placeholder="Número de Identidad" required>
+      <input type="email" id="email" name="email" class="form-input" placeholder="Correo electrónico" required>
+      <input type="password" id="password" name="password" class="form-input" placeholder="Contraseña" required>
+      <input type="password" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirmar contraseña" required>
+      
+      <label for="gender">Género:</label>
+      <select id="gender" name="gender" class="form-input" required>  <!-- Selector de género -->
+        <option value="">Selecciona tu género</option>  <!-- Valor por defecto -->
+        <option value="male">Masculino</option>
+        <option value="female">Femenino</option>
+        <option value="other">Otro</option>
+      </select>
+
+      <label for="birthdate">Fecha de nacimiento:</label>  <!-- Fecha de nacimiento -->
+      <input type="date" id="birthdate" name="birthdate" class="form-input" required>  <!-- Campo de fecha -->
+
+      <label for="profilepic">Imagen de perfil:</label>  <!-- Imagen de perfil -->
+      <input type="file" id="profilepic" name="profilepic" class="form-input" accept="image/*" required>  <!-- Aceptar solo imágenes -->
+
+      <label>  <!-- Aceptación de términos -->
+        <input type="checkbox" id="terms" required>
+        Acepto los términos y condiciones
+      </label>
+
+      <!-- Botón para enviar el formulario -->
+      <button type="button" onclick="register_pag()" class="form-submit">Registrarse</button>
+    </form>
+  </div>
+
+  <footer>  <!-- Pie de página con redes sociales -->
+    <div class="contenedor-footer">
+      <p>&copy; 2024 Tu nombre o empresa</p>  <!-- Derechos de autor -->
+      <ul class="redes-sociales">  <!-- Íconos de redes sociales -->
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  
+  <script src="../static/js/appformulario.js" type="text/javascript"></script>  <!-- Script del formulario -->
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* Estilos generales */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333; /* Color de texto principal */
+}
+
+.contenedor-header {
+  margin: 0 auto; /* Center elements horizontally */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #232f3e; /* Light gray background */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky; /* Header sticks to top on scroll (optional) */
+  top: 0;
+  z-index: 10; /* Ensure header stays on top of content */
+}
+.contenedor-header img {
+  width: 100px;
+  height: auto;
+}
+
+.menu-principal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-principal li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold; 
+}
+
+.menu-principal a:hover {
+  color: #000;
+  transition: color 0.3s ease;
+}
+/* Estilos para la tabla */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Espacio entre el formulario y la tabla */
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+/* Estilos para la tabla de resultados específicamente */
+#tabla-resultados {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Espacio entre el formulario y la tabla */
+    
+}
+#tabla-resultados th {
+    background-color: #000000b5;
+    color: #fff; /* Color de texto blanco */
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center; /* Centra el texto en toda la tabla */
+}
+
+
+#tabla-resultados td {
+    background-color: #000000b5;
+    color: #fff; 
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center; /* Centra el texto en toda la tabla */
+}
+#resultados img {
+    border-radius: 50%;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+#tabla-resultados tbody tr:hover {
+    background-color: #e0e0e0; /* Cambio de color de fondo al pasar el mouse */
+}
+
+        
+/* Contenido principal */
+
+main {
+  padding: 20px;
+}
+
+/* Sección de consulta */
+
+.contenedor-consulta {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #007bff; /* Azul oscuro de Amazon */
+}
+
+.contenedor-imagen-usuario {
+  margin-bottom: 40px;
+}
+
+.imagen-usuario-redondo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.contenedor-busqueda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-busqueda {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.boton-buscar {
+  background-color: #ff9900; /* Naranja de Amazon*/
+  padding: 10px 20px; /* Aumentar el relleno */
+  font-size: 15px; /* Aumentar el tamaño de la letra */
+  font-weight: bold; /* Poner el texto en negrita */
+  cursor: pointer;
+  border-radius: 20px;
+}
+  
+ /* Estilos para el footer */
+footer {
+    background-color: #232f3e; /* Color de fondo del footer */
+    color: #fff; /* Color del texto del footer */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el contenido del footer */
+.contenedor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilos para las redes sociales */
+.redes-sociales {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.redes-sociales li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.redes-sociales li:last-child {
+    margin-right: 0;
+}
+
+.redes-sociales li a {
+    color: #fff; /* Color de los íconos */
+    font-size: 20px; /* Tamaño de los íconos */
+}
+/* Estilos para el menú principal */
+.menu-principal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-principal li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-principal li:last-child {
+    margin-right: 0;
+}
+
+.menu-principal li a {
+    text-decoration: none;
+    color: white;
+    font-size: bold;
+}
+
+.menu-principal a:hover {
+  color: #000; /* Black on hover */
+}
+
+/* Estilos para el botón de menú en pantallas pequeñas */
+.menu-btn {
+    display: none; /* Ocultar el botón en pantallas grandes */
+}
+@media screen and (max-width: 600px) {
+    /* Mostrar el botón de menú en pantallas pequeñas */
+    .menu-btn {
+        display: block;
+    }
+
+    /* Ocultar el menú principal en pantallas pequeñas */
+    .menu-principal {
+        display: none;
+    }
+
+    /* Estilos para el menú desplegable en pantallas pequeñas */
+    .menu-principal.active {
+        display: block;
+    }
+}
