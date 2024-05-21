@@ -3,6 +3,7 @@ from database.db import insert_records,consult_records, connectionSQL
 from controller.s3_control import connection_s3, upload_file_s3, save_file
 import os
 from urllib.parse import quote
+
 def func_register_user():
     data_user = request.form  # Obtener los datos del formulario
     photo = request.files.get('imagenPerfil')  # Obtener el archivo de la solicitud
@@ -15,17 +16,23 @@ def func_register_user():
 
     if s3_connection:
         # Subir archivo a S3
-        if upload_file_s3(s3_connection, photo_path,  photo.filename):
+        success, s3_file_name = upload_file_s3(s3_connection, photo_path, data_user['identidad'])
+        if success:
             # Eliminar archivo temporal
             os.remove(photo_path)
-            # Insertar datos en la base de datos
-            message, status = insert_records(data_user, photo_path)
-            return jsonify({"message": message}), status  # Devolver respuesta JSON
+            
+            # Incluir el nombre del archivo en los datos del usuario
+            data_user = dict(data_user)
+            data_user['imagenPerfil'] = s3_file_name
+
+            # Insertar el registro en la base de datos
+            insert_records(data_user)
+
+            return jsonify({"message": "Usuario registrado correctamente"})
         else:
-            return jsonify({"message": "Error al cargar archivo en S3"})  # Error al cargar archivo en S3
+            return jsonify({"message": "Error al subir la imagen a S3"})
     else:
-        return jsonify({"message": "Error de conexión con S3"})  # Error de conexión con S3
-        
+        return jsonify({"message": "Error al conectar con S3"})
 
 def func_consult_user():
     identidad = request.args.get("identidad")

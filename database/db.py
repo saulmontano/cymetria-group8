@@ -21,7 +21,7 @@ def connectionSQL():
         print("Error al conectar a la base de datos:", err)
         return None
 
-def insert_records(data, file_path):
+def insert_records(data):
     """Inserta un registro en la tabla 'usuarios'."""
     try:
         connection = connectionSQL()  # Conecta a la base de datos
@@ -40,7 +40,7 @@ def insert_records(data, file_path):
                 data['password'],
                 data['genero'],
                 data['fechaNacimiento'],
-                file_path
+                data['imagenPerfil']
             ))
             connection.commit()  # Confirma los cambios
             print("Registro insertado exitosamente")

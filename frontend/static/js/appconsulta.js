@@ -65,27 +65,18 @@ function consult_user() {
 
         // Agregar la fila a la tabla
         tablaResultados.appendChild(fila);
-
-        // Crear una fila y agregar la celda de la imagen
-        var filaImagen = document.createElement("tr");
-        var celdaImagen = document.createElement("td");
-
-        // Crear la imagen si está disponible
+        // Mostrar la imagen en el contenedor
+        var contenedorImagen = document.querySelector(".contenedor-imagen-usuario");
+        contenedorImagen.innerHTML = "";  // Limpiar contenido existente
         if (data.imagen_url) {
             var imagenPerfil = document.createElement("img");
             imagenPerfil.src = data.imagen_url;  // Establecer la URL de la imagen
-            celdaImagen.appendChild(imagenPerfil);  // Agregar la imagen a la celda
+            imagenPerfil.alt = "Imagen de perfil";
+            contenedorImagen.appendChild(imagenPerfil);
         } else {
-            celdaImagen.textContent = "No hay imagen";  // Si no hay imagen, mostrar un mensaje
+            contenedorImagen.textContent = "No hay imagen disponible";  // Mostrar mensaje si no hay imagen
         }
-
-        // Agregar la celda de la imagen a la fila
-        filaImagen.appendChild(celdaImagen);
-
-        // Agregar la fila de la imagen a la tabla
-        tablaResultados.appendChild(filaImagen);
-
-        alert("Consulta realizada con éxito");  // Mensaje de éxito
+        
     })
     .catch(error => {
         console.error("Error durante la consulta:", error);  // Manejo de errores
