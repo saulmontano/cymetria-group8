@@ -14,7 +14,7 @@ def connection_s3():
         
 def save_file(id, photo):
     photo_extension = photo.filename.split(".")[1]
-    photo_path = "/tmp/" + id + "." + photo_extension
+    photo_path = "/tmp/" + photo.filename
     photo.save(photo_path)
     return photo_path
     
